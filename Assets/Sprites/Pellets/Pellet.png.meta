@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eee6c694b8b574d81b08473b73b1c14b
+guid: 3185618a2799e489f804e090cd84f628
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PelletPower_0
+      name: PelletEye_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 29
-        width: 52
-        height: 74
+        x: 29
+        y: 33
+        width: 70
+        height: 66
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21fad610b9fa1412babed7bc8563695f
-      internalID: -1082698298
+      spriteID: 6291ce04ddb21412c938115623c98b2a
+      internalID: -1500136515
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PelletPower_0: -1082698298
+      PelletEye_0: -1500136515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
