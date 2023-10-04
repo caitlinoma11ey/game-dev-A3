@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 274919a3cf4204941b4afcd81b9f185f
+guid: eee6c694b8b574d81b08473b73b1c14b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -105,7 +105,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PelletPower_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 29
+        width: 52
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fad610b9fa1412babed7bc8563695f
+      internalID: -1082698298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -116,7 +137,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PelletPower_0: -1082698298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
