@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6bfc46c78dea47f193326a51cb6d9d4
+guid: cb5b88f8e21414141992af30a9842df1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GhostBlue_0
+      name: PurpleGhost_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 420
-        width: 40
-        height: 48
+        x: 8
+        y: 386
+        width: 112
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26d426121f2e64d76afad830168f9e28
-      internalID: 1880236660
+      spriteID: 6b31f8d81aa5f41a6a861b550bb2f76f
+      internalID: 978563201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_1
+      name: PurpleGhost_1
       rect:
         serializedVersion: 2
-        x: 180
-        y: 420
-        width: 40
-        height: 48
+        x: 136
+        y: 386
+        width: 112
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27eea7a60d4544f83ad342fd747f0585
-      internalID: -1306185734
+      spriteID: 6a3ce8ab1cbc142e6bcf839746a0efe0
+      internalID: 258565685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_2
+      name: PurpleGhost_2
       rect:
         serializedVersion: 2
-        x: 52
-        y: 292
-        width: 40
-        height: 48
+        x: 8
+        y: 258
+        width: 112
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05da18d5f5c65446ba02e4cfc6a4407d
-      internalID: -2082477212
+      spriteID: a7bcca01d992848c38bf65e1b92b7ccf
+      internalID: -1099638533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_3
+      name: PurpleGhost_3
       rect:
         serializedVersion: 2
-        x: 180
-        y: 292
-        width: 40
-        height: 48
+        x: 136
+        y: 258
+        width: 112
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22d91fdc48694c94aa860d553a311a2
-      internalID: -2030009781
+      spriteID: 301ed36353e274899a0a3d0ac9796987
+      internalID: -512087813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_4
+      name: PurpleGhost_4
       rect:
         serializedVersion: 2
-        x: 44
-        y: 168
-        width: 32
-        height: 48
+        x: 20
+        y: 133
+        width: 88
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a436819c845ea4ef990889ec11cb940a
-      internalID: 15562318
+      spriteID: ec2ee932426174c4ba44b15346e9a705
+      internalID: 836151401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_5
+      name: PurpleGhost_5
       rect:
         serializedVersion: 2
-        x: 172
-        y: 168
-        width: 32
-        height: 48
+        x: 148
+        y: 133
+        width: 88
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f72666b64121442e58a72ada5f2f4419
-      internalID: -671519661
+      spriteID: 68f96773b4aa94767b8e9c9dfa3d9b77
+      internalID: 176607441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_6
+      name: PurpleGhost_6
       rect:
         serializedVersion: 2
-        x: 44
-        y: 40
-        width: 32
-        height: 48
+        x: 20
+        y: 5
+        width: 88
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a25f54ef8364770a01e51e824dacf7
-      internalID: -1537101454
+      spriteID: 32f827f4d135f461499eb40b2112aa20
+      internalID: 1495587932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostBlue_7
+      name: PurpleGhost_7
       rect:
         serializedVersion: 2
-        x: 172
-        y: 40
-        width: 32
-        height: 48
+        x: 148
+        y: 5
+        width: 88
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,8 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c7bd69681a24e1f8981c55bf48807d
-      internalID: 1750398457
+      spriteID: 6d6fb86784cdd429fab3d33a95e54ec5
+      internalID: 1995897764
       vertices: []
       indices: 
       edges: []
@@ -285,14 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GhostBlue_0: 1880236660
-      GhostBlue_1: -1306185734
-      GhostBlue_2: -2082477212
-      GhostBlue_3: -2030009781
-      GhostBlue_4: 15562318
-      GhostBlue_5: -671519661
-      GhostBlue_6: -1537101454
-      GhostBlue_7: 1750398457
+      PurpleGhost_0: 978563201
+      PurpleGhost_1: 258565685
+      PurpleGhost_2: -1099638533
+      PurpleGhost_3: -512087813
+      PurpleGhost_4: 836151401
+      PurpleGhost_5: 176607441
+      PurpleGhost_6: 1495587932
+      PurpleGhost_7: 1995897764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

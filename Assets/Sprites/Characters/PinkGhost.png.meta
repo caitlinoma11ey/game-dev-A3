@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cda5b0bdc0c947da80d7e210a90c825
+guid: dc78f040665e8462e99f540436df45c4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost_Pink_0
+      name: New Piskel (43)_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 676
-        width: 40
-        height: 48
+        x: 8
+        y: 386
+        width: 112
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c90bb4d3ce65d44428341c5d1f460782
-      internalID: -616245909
+      spriteID: fc031ef89af004c049eae58968e9edc4
+      internalID: -173054920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_1
+      name: New Piskel (43)_1
       rect:
         serializedVersion: 2
-        x: 180
-        y: 676
-        width: 40
-        height: 48
+        x: 136
+        y: 386
+        width: 112
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6515fef5cb93a46408f00b71939bfbd9
-      internalID: -1722895221
+      spriteID: ea48c06eee92e4c02b3d8d09456bd0f8
+      internalID: 363871030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_2
+      name: New Piskel (43)_2
       rect:
         serializedVersion: 2
-        x: 52
-        y: 548
-        width: 40
-        height: 48
+        x: 8
+        y: 258
+        width: 112
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39071392a4d584d8c83d0c8d47020976
-      internalID: -178540699
+      spriteID: 2151e70f50b054d5b9c7fbfb67770a47
+      internalID: -830552914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_3
+      name: New Piskel (43)_3
       rect:
         serializedVersion: 2
-        x: 180
-        y: 548
-        width: 40
-        height: 48
+        x: 136
+        y: 258
+        width: 112
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcb17eb4eb0634513b059a8a6ec86231
-      internalID: 1913494736
+      spriteID: c48a1f6c0f30044f2ba62e5b8b3a402c
+      internalID: -741228658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_4
+      name: New Piskel (43)_4
       rect:
         serializedVersion: 2
-        x: 52
-        y: 420
-        width: 40
-        height: 48
+        x: 20
+        y: 133
+        width: 88
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7660007d82e7e4edab9097817685d745
-      internalID: -127338994
+      spriteID: 2388a5c6e99814e1f983369b35de96a6
+      internalID: -486471156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_5
+      name: New Piskel (43)_5
       rect:
         serializedVersion: 2
-        x: 180
-        y: 420
-        width: 40
-        height: 48
+        x: 148
+        y: 133
+        width: 88
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dd6499c88d4040d5a7e8d0ef3d56690
-      internalID: -462246395
+      spriteID: 811a08ddc906246358a859dba41ba395
+      internalID: 611151703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_6
+      name: New Piskel (43)_6
       rect:
         serializedVersion: 2
-        x: 52
-        y: 292
-        width: 40
-        height: 48
+        x: 20
+        y: 5
+        width: 88
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d19e60e4ae1e4492b694670ffed3591
-      internalID: 20812159
+      spriteID: dd25c69df5e764549809f020b571d369
+      internalID: 1252088096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost_Pink_7
+      name: New Piskel (43)_7
       rect:
         serializedVersion: 2
-        x: 172
-        y: 296
-        width: 32
-        height: 48
+        x: 148
+        y: 5
+        width: 88
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,71 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9180ee4c9436f4302abb42f548aa6a1a
-      internalID: 1294729506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ghost_Pink_8
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 168
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfd93a1cf593e4899b1506cbec70be8f
-      internalID: 884668363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ghost_Pink_9
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 168
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b01dea2ed31134b4c894f6b707a70fae
-      internalID: -181844930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ghost_Pink_10
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 40
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ba08de4bcc4945c8b0cc1eb9b01a14d
-      internalID: 1633519791
+      spriteID: e20ce0e4381b94e72ad3f95d1bb16707
+      internalID: 873149030
       vertices: []
       indices: 
       edges: []
@@ -348,17 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ghost_Pink_0: -616245909
-      Ghost_Pink_1: -1722895221
-      Ghost_Pink_10: 1633519791
-      Ghost_Pink_2: -178540699
-      Ghost_Pink_3: 1913494736
-      Ghost_Pink_4: -127338994
-      Ghost_Pink_5: -462246395
-      Ghost_Pink_6: 20812159
-      Ghost_Pink_7: 1294729506
-      Ghost_Pink_8: 884668363
-      Ghost_Pink_9: -181844930
+      New Piskel (43)_0: -173054920
+      New Piskel (43)_1: 363871030
+      New Piskel (43)_2: -830552914
+      New Piskel (43)_3: -741228658
+      New Piskel (43)_4: -486471156
+      New Piskel (43)_5: 611151703
+      New Piskel (43)_6: 1252088096
+      New Piskel (43)_7: 873149030
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
