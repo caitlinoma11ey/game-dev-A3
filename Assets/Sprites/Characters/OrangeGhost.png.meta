@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa2167fb7f37d4924867d7a2747ea212
+guid: 4c2a11d9609a943b7b0150f26b0d8816
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GhostOrange_0
+      name: OrangeGhost_0
       rect:
         serializedVersion: 2
-        x: 52
-        y: 548
-        width: 40
-        height: 48
+        x: 8
+        y: 386
+        width: 112
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64946465a9e444083b5298401d293d0e
-      internalID: -1909668838
+      spriteID: f69ce0b73ebc444f4a8884e58e34c3a7
+      internalID: 937345532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_1
+      name: OrangeGhost_1
       rect:
         serializedVersion: 2
-        x: 180
-        y: 548
-        width: 40
-        height: 48
+        x: 136
+        y: 386
+        width: 112
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9db23270741cf466d96a93e8b0284639
-      internalID: 1283280912
+      spriteID: 0fe7615e1d06349069a3ccf96cf7315d
+      internalID: -1635361415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_2
+      name: OrangeGhost_2
       rect:
         serializedVersion: 2
-        x: 52
-        y: 420
-        width: 40
-        height: 48
+        x: 8
+        y: 258
+        width: 112
+        height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 213e30974b429423fb4ae23aac1dd5e7
-      internalID: -1266570385
+      spriteID: ddd04046470d344ab85abf7d245b57d8
+      internalID: -2102858312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_3
+      name: OrangeGhost_3
       rect:
         serializedVersion: 2
-        x: 180
-        y: 420
-        width: 40
-        height: 48
+        x: 136
+        y: 258
+        width: 112
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef75858bb9604f028af52da89f4b1db
-      internalID: 1127391073
+      spriteID: 20552a78be2084941a451846077bf269
+      internalID: 437367068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_4
+      name: OrangeGhost_4
       rect:
         serializedVersion: 2
-        x: 52
-        y: 292
-        width: 40
-        height: 48
+        x: 20
+        y: 133
+        width: 88
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6edcd776aefa4c5c8ae60ca897122ff
-      internalID: -1113019791
+      spriteID: 314bc675bbb1c4b19b7c5657add7efb0
+      internalID: -1359010309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_5
+      name: OrangeGhost_5
       rect:
         serializedVersion: 2
-        x: 172
-        y: 296
-        width: 32
-        height: 48
+        x: 148
+        y: 133
+        width: 88
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa61f5e5b3ba74f1091156eba0689287
-      internalID: 1625162946
+      spriteID: 0349597fbfb214c4e9d0442b2a86469b
+      internalID: 1538941951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_6
+      name: OrangeGhost_6
       rect:
         serializedVersion: 2
-        x: 44
-        y: 168
-        width: 32
-        height: 48
+        x: 20
+        y: 5
+        width: 88
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d190120f40884bae88bf39f8cd08ddc
-      internalID: -2142848823
+      spriteID: 8ccd1fe340eb04d53aa130ae91083b34
+      internalID: -597960566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GhostOrange_7
+      name: OrangeGhost_7
       rect:
         serializedVersion: 2
-        x: 172
-        y: 168
-        width: 32
-        height: 48
+        x: 148
+        y: 5
+        width: 88
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,29 +268,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cbe654fb374040c69335979c0f5e53b
-      internalID: 2001334241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GhostOrange_8
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 40
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7cfa00b16d1a942d187c55322bc6b443
-      internalID: 1801444730
+      spriteID: 46a8f04d297d64006831cd0ff0f1b2b3
+      internalID: -1757997401
       vertices: []
       indices: 
       edges: []
@@ -306,15 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GhostOrange_0: -1909668838
-      GhostOrange_1: 1283280912
-      GhostOrange_2: -1266570385
-      GhostOrange_3: 1127391073
-      GhostOrange_4: -1113019791
-      GhostOrange_5: 1625162946
-      GhostOrange_6: -2142848823
-      GhostOrange_7: 2001334241
-      GhostOrange_8: 1801444730
+      OrangeGhost_0: 937345532
+      OrangeGhost_1: -1635361415
+      OrangeGhost_2: -2102858312
+      OrangeGhost_3: 437367068
+      OrangeGhost_4: -1359010309
+      OrangeGhost_5: 1538941951
+      OrangeGhost_6: -597960566
+      OrangeGhost_7: -1757997401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
