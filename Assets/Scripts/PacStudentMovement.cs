@@ -9,11 +9,10 @@ public class PacStudentMovement
     public float distance;
     public string animation;
 
-    public PacStudentMovement(Vector3 startPos, Vector3 endPos, string animation)
+    public PacStudentMovement(Vector3 startPos, Vector3 endPos)
     {
         this.startPos = startPos;
         this.endPos = endPos;
         this.distance = Vector3.Distance(startPos, endPos);
-        this.animation = animation;
     }
 }

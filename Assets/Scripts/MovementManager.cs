@@ -7,8 +7,9 @@ public class MovementManager : MonoBehaviour
     private List<PacStudentMovement> pacMovements = new List<PacStudentMovement>();
     private Animator animator;
 
-    bool isMoving = false;
     int currentPos = 0;
+    float speed = 1.5f;
+    bool isMoving = false;
 
     // Movements
     private Vector3 topLeft = new Vector3(-16.13f, 16.6f, 0f);
@@ -19,11 +20,12 @@ public class MovementManager : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        gameObject.GetComponent<AudioSource>().Play();
 
-        pacMovements.Add(new PacStudentMovement(topLeft, topRight, "Walk_Right"));
-        pacMovements.Add(new PacStudentMovement(topRight, bottomRight, "Walk_Down"));
-        pacMovements.Add(new PacStudentMovement(bottomRight, bottomLeft, "Walk_Left"));
-        pacMovements.Add(new PacStudentMovement(bottomLeft, topLeft, "Walk_Up"));
+        pacMovements.Add(new PacStudentMovement(topLeft, topRight));
+        pacMovements.Add(new PacStudentMovement(topRight, bottomRight));
+        pacMovements.Add(new PacStudentMovement(bottomRight, bottomLeft));
+        pacMovements.Add(new PacStudentMovement(bottomLeft, topLeft));
     }
 
     void Update()
@@ -32,6 +34,9 @@ public class MovementManager : MonoBehaviour
         {
             StartCoroutine(MovePacStudent(pacMovements[currentPos]));
         }
+
+        if (currentPos == 4)
+            currentPos = 0;
     }
 
     IEnumerator MovePacStudent(PacStudentMovement movement)
@@ -39,11 +44,9 @@ public class MovementManager : MonoBehaviour
         isMoving = true;
         float totalTime = 0f;
 
-        animator.SetTrigger(movement.animation);
-
         while (Vector3.Distance(gameObject.transform.position, movement.endPos) > 0.1f)
         {
-            float fractionOfJourney = totalTime / movement.distance;
+            float fractionOfJourney = totalTime * speed / movement.distance;
             gameObject.transform.position = Vector3.Lerp(movement.startPos, movement.endPos, fractionOfJourney);
             totalTime += Time.deltaTime;
             yield return null;
