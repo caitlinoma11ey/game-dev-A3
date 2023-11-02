@@ -9,17 +9,10 @@ public class CherryController : MonoBehaviour
 
     private Camera cam;
 
-    // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
-        InvokeRepeating("PlaceBonusCherry", 1f, 3f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
+        InvokeRepeating("PlaceBonusCherry",0f, 10f);
     }
 
     void PlaceBonusCherry()
@@ -29,9 +22,7 @@ public class CherryController : MonoBehaviour
 
         if (!tweener.TweenExists(cherry.transform))
         {
-            Vector3 endPos = new Vector3(-position.x, -position.y, 0);
-
-            tweener.AddTween(cherry.transform, position, endPos, 5f);
+            tweener.AddTween(cherry.transform, position, -position, 8f);
         }
     }
 
@@ -48,23 +39,23 @@ public class CherryController : MonoBehaviour
         switch (randomNum)
         {
             case 0:
-                x = Random.Range(width, width + 2);
+                x = Random.Range(-width, width);
                 y = height + 2f;
                 break;
 
             case 1:
-                x = Random.Range(width, width + 2);
+                x = Random.Range(-width, width);
                 y = -height - 2f;
                 break;
 
             case 2:
                 x = height + 2f;
-                y = Random.Range(height, height + 2);
+                y = Random.Range(-height, height);
                 break;
 
             case 3:
                 x = -height - 2f;
-                y = Random.Range(-height, height - 2);
+                y = Random.Range(-height, height);
                 break;
         }
         return new Vector3(x, y, 0);
