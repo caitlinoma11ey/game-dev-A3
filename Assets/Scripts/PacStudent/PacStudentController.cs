@@ -7,6 +7,8 @@ public class PacStudentController : MonoBehaviour
 {
     public PacStudentAnimManager animManager;
     public PacStudentAudioManager audioManager;
+    public ParticleSystem dust; 
+
 
     public Tweener tweener;
     public Tilemap tilemap; 
@@ -62,10 +64,11 @@ public class PacStudentController : MonoBehaviour
             {
                 currentInput = lastInput;
                 ChangeDirection();
+                ShowDust();
+
 
                 Lerp(startPos, endPos);
                 CheckForPellet(endPos);
-
             }
             else
             {
@@ -76,15 +79,28 @@ public class PacStudentController : MonoBehaviour
                 // Continue moving in current position if it is valid
                 if (CanWalk(endPos))
                 {
+                    ShowDust();
+
                     Lerp(startPos, endPos);
                     CheckForPellet(endPos);
                 }
                 else
                 {
+                    HideDust();
                     animManager.StopWalking();
                 }
             }
         }
+    }
+
+    void ShowDust()
+    {
+        dust.Play(); 
+    }
+
+    void HideDust()
+    {
+        dust.Stop();
     }
 
     void CheckForPellet(Vector3 newPos)
@@ -96,7 +112,7 @@ public class PacStudentController : MonoBehaviour
         {
             audioManager.PlayEatingClip();
         }
-        else if (tile.name.Contains("Empty"))
+        else
         {
             audioManager.PlayNormalClip();
         }
