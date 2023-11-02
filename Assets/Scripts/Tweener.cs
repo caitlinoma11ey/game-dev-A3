@@ -54,16 +54,13 @@ public class Tweener : MonoBehaviour
         return false;
     }
 
-    public bool isLerping()
+    public bool isLerping(Transform target)
     {
-        float elapsedTime = 0;
-
         for (int i = activeTweens.Count - 1; i >= 0; i--)
         {
-            elapsedTime = Time.time - activeTweens[i].StartTime;
-            if (elapsedTime >= activeTweens[i].Duration)
+            if (target == activeTweens[i].Target)
                 return true;
         }
-        return false; 
+        return false;
     }
 }

@@ -10,6 +10,10 @@ public class PacStudentAudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip normal;
 
+
+    [SerializeField]
+    private AudioClip wall;
+
     private AudioSource audioSource;
 
     void Start()

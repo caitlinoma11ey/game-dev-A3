@@ -12,7 +12,7 @@ public class CherryController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        InvokeRepeating("PlaceBonusCherry",0f, 10f);
+        InvokeRepeating("PlaceBonusCherry", 0f, 10f);
     }
 
     void PlaceBonusCherry()
@@ -24,6 +24,20 @@ public class CherryController : MonoBehaviour
         {
             tweener.AddTween(cherry.transform, position, -position, 8f);
         }
+
+        StartCoroutine(DestroyCherry(cherry));
+    }
+
+
+    IEnumerator DestroyCherry(GameObject cherry)
+    {
+        while (tweener.isLerping(cherry.transform))
+        {
+            // Do nothing
+            yield return null;
+        }
+
+        Destroy(cherry);
     }
 
     Vector3 GetRandomPosition()

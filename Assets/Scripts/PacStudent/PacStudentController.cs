@@ -13,9 +13,10 @@ public class PacStudentController : MonoBehaviour
     public Tweener tweener;
     public Tilemap tilemap;
 
-    bool isMoving = false;
     private float gridSize = 1.28f;
     private float duration = 0.5f;
+
+    private Transform recentTween = null;
 
     KeyCode lastInput;
     KeyCode currentInput; 
@@ -27,7 +28,6 @@ public class PacStudentController : MonoBehaviour
             lastInput = KeyCode.W;
             Move();
         }
-
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -52,7 +52,7 @@ public class PacStudentController : MonoBehaviour
 
     public void Move()
     {
-        if (tweener != null && !tweener.isLerping())
+        if (tweener != null && !tweener.isLerping(recentTween))
         {
             // Find the direction to move pacstudent
             Vector3 direction = GetDirection(lastInput);
@@ -65,11 +65,8 @@ public class PacStudentController : MonoBehaviour
             {
                 currentInput = lastInput;
                 ChangeDirection();
-                ShowDust();
 
                 Lerp(startPos, endPos);
-             
-                CheckForPellet(endPos);
             }
             else
             {
@@ -80,28 +77,21 @@ public class PacStudentController : MonoBehaviour
                 // Continue moving in current position if it is valid
                 if (CanWalk(endPos))
                 {
-                    ShowDust();
-
                     Lerp(startPos, endPos);
-                    CheckForPellet(endPos);
                 }
                 else
                 {
-                    HideDust();
-                    animManager.StopWalking();
+                    StopMovement(endPos);
                 }
             }
         }
     }
 
-    void ShowDust()
+    public void StopMovement(Vector3 endPos)
     {
-        dust.Play(); 
-    }
-
-    void HideDust()
-    {
-        dust.Stop();
+        HideDust();
+        animManager.StopWalking();
+        CheckForPellet(endPos);
     }
 
     void CheckForPellet(Vector3 newPos)
@@ -121,15 +111,16 @@ public class PacStudentController : MonoBehaviour
 
     void Lerp(Vector2 startPos, Vector3 endPos)
     {
-        if (!isMoving)
+        ShowDust();
+
+        if (!tweener.TweenExists(transform))
         {
-            isMoving = true;
-            if (!tweener.TweenExists(transform))
-            {
-                tweener.AddTween(transform, startPos, endPos, duration);
-            }
-            isMoving = false;
+            tweener.AddTween(transform, startPos, endPos, duration);
         }
+
+        CheckForPellet(endPos);
+
+        recentTween = transform; // Allows us to see if tween has completed 
     }
 
     void ChangeDirection()
@@ -173,5 +164,15 @@ public class PacStudentController : MonoBehaviour
         }
 
         return false;
+    }
+
+    void ShowDust()
+    {
+        dust.Play();
+    }
+
+    void HideDust()
+    {
+        dust.Stop();
     }
 }
