@@ -12,7 +12,7 @@ public class CherryController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        InvokeRepeating("PlaceBonusCherry", 0f, 10f);
+        InvokeRepeating("PlaceBonusCherry", 0f, 3f);
     }
 
     void PlaceBonusCherry()
@@ -21,11 +21,10 @@ public class CherryController : MonoBehaviour
         GameObject cherry = Instantiate(cherryPrefab, position, Quaternion.identity);
 
         if (!tweener.TweenExists(cherry.transform))
-        {
-            tweener.AddTween(cherry.transform, position, -position, 8f);
-        }
+            tweener.AddTween(cherry.transform, position, -position, 20f);
 
-        StartCoroutine(DestroyCherry(cherry));
+        if (!tweener.TweenExists(cherry.transform))
+            StartCoroutine(DestroyCherry(cherry));
     }
 
 
@@ -37,6 +36,11 @@ public class CherryController : MonoBehaviour
             yield return null;
         }
 
+        Destroy(cherry);
+    }
+
+    public void EatCherry(GameObject cherry)
+    {
         Destroy(cherry);
     }
 

@@ -54,6 +54,15 @@ public class Tweener : MonoBehaviour
         return false;
     }
 
+    public void RemoveTween(Transform target)
+    {
+        for (int i = activeTweens.Count - 1; i >= 0; i--)
+        {
+            if (activeTweens[i].Target.transform == target)
+                activeTweens.Remove(activeTweens[i]);
+        }
+    }
+
     public bool isLerping(Transform target)
     {
         for (int i = activeTweens.Count - 1; i >= 0; i--)

@@ -7,7 +7,10 @@ public class PacStudentController : MonoBehaviour
 {
     public PacStudentAnimManager animManager;
     public PacStudentAudioManager audioManager;
-    public ParticleSystem dust; 
+    public PelletManager pelletManager;
+    public CherryController cherryController;
+    public ParticleSystem dust;
+    public ParticleSystem wallHitPS;
 
 
     public Tweener tweener;
@@ -19,7 +22,12 @@ public class PacStudentController : MonoBehaviour
     private Transform recentTween = null;
 
     KeyCode lastInput;
-    KeyCode currentInput; 
+    KeyCode currentInput;
+
+    void Start()
+    {
+        wallHitPS.Stop();
+    }
 
     void Update()
     {
@@ -81,6 +89,7 @@ public class PacStudentController : MonoBehaviour
                 }
                 else
                 {
+                    wallHitPS.Play();
                     StopMovement(endPos);
                 }
             }
@@ -99,9 +108,13 @@ public class PacStudentController : MonoBehaviour
         Vector3Int gridPosition = tilemap.WorldToCell(newPos);
         TileBase tile = tilemap.GetTile(gridPosition);
 
+        if (tile == null)
+            return;
+
         if (tile.name.Contains("Pellet"))
         {
             audioManager.PlayEatingClip();
+            pelletManager.RemovePellet(gridPosition);
         }
         else
         {
@@ -111,6 +124,7 @@ public class PacStudentController : MonoBehaviour
 
     void Lerp(Vector2 startPos, Vector3 endPos)
     {
+        wallHitPS.Stop();
         ShowDust();
 
         if (!tweener.TweenExists(transform))
@@ -118,7 +132,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(transform, startPos, endPos, duration);
         }
 
-        CheckForPellet(endPos);
+        CheckForPellet(startPos);
 
         recentTween = transform; // Allows us to see if tween has completed 
     }
@@ -158,6 +172,9 @@ public class PacStudentController : MonoBehaviour
         Vector3Int gridPosition = tilemap.WorldToCell(newPos);
         TileBase tile = tilemap.GetTile(gridPosition);
 
+        if (tile == null)
+            return false;
+
         if (!tile.name.Contains("Wall"))
         {
             return true;
@@ -174,5 +191,35 @@ public class PacStudentController : MonoBehaviour
     void HideDust()
     {
         dust.Stop();
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Teleporter")
+        {
+            Debug.Log("Test");
+
+            StartCoroutine(Teleport());
+        }
+    }
+
+    private IEnumerator Teleport()
+    {
+
+        // -0.3f to ensure pacstudent remains in middle of the map.
+        Vector3 newPos = new Vector3(-transform.position.x-0.3f, transform.position.y, 0);
+        transform.position = newPos;
+
+        yield return null;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Cherry")
+        {
+            tweener.RemoveTween(other.transform);
+            cherryController.EatCherry(other.gameObject);
+            pelletManager.EatCherry();
+        }
     }
 }
