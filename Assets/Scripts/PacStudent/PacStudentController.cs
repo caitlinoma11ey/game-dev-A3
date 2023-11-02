@@ -11,8 +11,9 @@ public class PacStudentController : MonoBehaviour
 
 
     public Tweener tweener;
-    public Tilemap tilemap; 
+    public Tilemap tilemap;
 
+    bool isMoving = false;
     private float gridSize = 1.28f;
     private float duration = 0.5f;
 
@@ -66,8 +67,8 @@ public class PacStudentController : MonoBehaviour
                 ChangeDirection();
                 ShowDust();
 
-
                 Lerp(startPos, endPos);
+             
                 CheckForPellet(endPos);
             }
             else
@@ -120,9 +121,14 @@ public class PacStudentController : MonoBehaviour
 
     void Lerp(Vector2 startPos, Vector3 endPos)
     {
-        if (!tweener.TweenExists(transform))
+        if (!isMoving)
         {
-            tweener.AddTween(transform, startPos, endPos, duration);
+            isMoving = true;
+            if (!tweener.TweenExists(transform))
+            {
+                tweener.AddTween(transform, startPos, endPos, duration);
+            }
+            isMoving = false;
         }
     }
 

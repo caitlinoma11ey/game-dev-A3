@@ -6,6 +6,7 @@ public class PacStudentAnimManager : MonoBehaviour
 {
     Animator animator;
 
+
     void Start()
     {
         animator = GetComponent<Animator>();
