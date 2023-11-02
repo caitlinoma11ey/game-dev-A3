@@ -63,8 +63,8 @@ public class PacStudentController : MonoBehaviour
                 currentInput = lastInput;
                 ChangeDirection();
 
-                CheckForPellet(endPos);
                 Lerp(startPos, endPos);
+                CheckForPellet(endPos);
 
             }
             else
@@ -76,8 +76,8 @@ public class PacStudentController : MonoBehaviour
                 // Continue moving in current position if it is valid
                 if (CanWalk(endPos))
                 {
-                    CheckForPellet(endPos);
                     Lerp(startPos, endPos);
+                    CheckForPellet(endPos);
                 }
                 else
                 {
