@@ -13,16 +13,34 @@ public class PacStudentAnimManager : MonoBehaviour
 
     void Update()
     {
-        if (gameObject.transform.position == new Vector3(-16.13f, 16.6f, 0f))
-            animator.SetTrigger("Walk_Right");
+    }
 
-        if (gameObject.transform.position == new Vector3(-9.7f, 16.6f, 0f))
-            animator.SetTrigger("Walk_Down");
+    public void MoveUp ()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("Walk_Up");
+    }
 
-        if (gameObject.transform.position == new Vector3(-9.7f, 11.5f, 0f))
-            animator.SetTrigger("Walk_Left");
+    public void MoveDown()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("Walk_Down");
+    }
 
-        if (gameObject.transform.position == new Vector3(-16.13f, 11.5f, 0f))
-            animator.SetTrigger("Walk_Up");
+    public void MoveRight()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("Walk_Right");
+    }
+
+    public void MoveLeft()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("Walk_Left");
+    }
+
+    public void StopWalking()
+    {
+        animator.enabled = false;
     }
 }

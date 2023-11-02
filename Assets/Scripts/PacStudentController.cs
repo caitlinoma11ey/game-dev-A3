@@ -5,24 +5,15 @@ using UnityEngine.Tilemaps;
 
 public class PacStudentController : MonoBehaviour
 {
+    public PacStudentAnimManager animManager; 
     public Tweener tweener;
     public Tilemap tilemap; 
 
-    public enum direction
-    {
-
-    }
-
-    private bool isMoving = false;
     private float gridSize = 1.28f;
     private float duration = 0.5f;
 
     KeyCode lastInput;
     KeyCode currentInput; 
-
-    void Start()
-    {
-    }
 
     void Update()
     {
@@ -54,21 +45,6 @@ public class PacStudentController : MonoBehaviour
         Move();
     }
 
-    public void MoveUp()
-    {
-
-    }
-    
-    public void MoveDown()
-    {
-
-    }
-
-    public void MoveLeft()
-    {
-
-    }
-
     public void Move()
     {
         if (tweener != null && !tweener.isLerping())
@@ -83,7 +59,11 @@ public class PacStudentController : MonoBehaviour
             if (CanWalk(endPos))
             {
                 currentInput = lastInput;
+                ChangeDirection();
+                CheckForPellet(endPos);
+
                 Lerp(startPos, endPos);
+
             }
             else
             {
@@ -94,9 +74,29 @@ public class PacStudentController : MonoBehaviour
                 // Continue moving in current position if it is valid
                 if (CanWalk(endPos))
                 {
+                    CheckForPellet(endPos);
                     Lerp(startPos, endPos);
                 }
+                else
+                {
+                    animManager.StopWalking();
+                }
             }
+        }
+    }
+
+    void CheckForPellet(Vector2 newPos)
+    {
+        Vector3Int gridPosition = tilemap.WorldToCell(newPos);
+        TileBase tile = tilemap.GetTile(gridPosition);
+
+        if (tile.name.Contains("Pellet"))
+        {
+            
+        }
+        else if (tile.name.Contains("Empty"))
+        {
+
         }
     }
 
@@ -106,6 +106,21 @@ public class PacStudentController : MonoBehaviour
         {
             tweener.AddTween(transform, startPos, endPos, duration);
         }
+    }
+
+    void ChangeDirection()
+    {
+        if (lastInput == KeyCode.W)
+            animManager.MoveUp();
+
+        if (lastInput == KeyCode.S)
+            animManager.MoveDown();
+
+        if (lastInput == KeyCode.A)
+            animManager.MoveLeft();
+
+        if (lastInput == KeyCode.D)
+            animManager.MoveRight();
     }
 
     Vector2 GetDirection(KeyCode input)
