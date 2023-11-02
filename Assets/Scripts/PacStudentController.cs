@@ -18,7 +18,7 @@ public class PacStudentController : MonoBehaviour
     private float duration = 0.5f;
 
     KeyCode lastInput;
-    Transform currentInput; 
+    KeyCode currentInput; 
 
     void Start()
     {
@@ -50,6 +50,8 @@ public class PacStudentController : MonoBehaviour
             lastInput = KeyCode.D;
             Move();
         }
+
+        Move();
     }
 
     public void MoveUp()
@@ -71,34 +73,66 @@ public class PacStudentController : MonoBehaviour
     {
         if (tweener != null && !tweener.isLerping())
         {
-            // Find the direction to move pacstudent in
-            Vector2 direction = GetDirection();
-            
+            // Find the direction to move pacstudent
+            Vector3 direction = GetDirection(lastInput);
 
-            Vector2 startPos = transform.position;
-            Vector2 endPos = startPos + (direction * gridSize);
+            Vector3 startPos = transform.position;
+            Vector3 endPos = transform.position + (direction * gridSize);
 
-
-            if (!tweener.TweenExists(transform))
+            // Check if adjacent grid from last input is walkable
+            if (CanWalk(endPos))
             {
-                tweener.AddTween(transform, startPos, endPos, duration);
+                currentInput = lastInput;
+                Lerp(startPos, endPos);
             }
+            else
+            {
+                direction = GetDirection(currentInput);
+                startPos = transform.position;
+                endPos = startPos + (direction * gridSize);
 
+                // Continue moving in current position if it is valid
+                if (CanWalk(endPos))
+                {
+                    Lerp(startPos, endPos);
+                }
+            }
         }
     }
 
-    private Vector2 GetDirection ()
+    void Lerp(Vector2 startPos, Vector3 endPos)
     {
-        if (lastInput == KeyCode.W)
+        if (!tweener.TweenExists(transform))
+        {
+            tweener.AddTween(transform, startPos, endPos, duration);
+        }
+    }
+
+    Vector2 GetDirection(KeyCode input)
+    {
+        if (input == KeyCode.W)
             return Vector2.up;
 
-        if (lastInput == KeyCode.A)
+        if (input == KeyCode.A)
             return Vector2.left;
 
-        if (lastInput == KeyCode.S)
+        if (input == KeyCode.S)
             return Vector2.down;
 
         // If lastInput == KeyCode.D
         return Vector2.right;
+    }
+
+    bool CanWalk(Vector2 newPos)
+    {
+        Vector3Int gridPosition = tilemap.WorldToCell(newPos);
+        TileBase tile = tilemap.GetTile(gridPosition);
+
+        if (!tile.name.Contains("Wall"))
+        {
+            return true;
+        }
+
+        return false;
     }
 }
