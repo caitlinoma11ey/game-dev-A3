@@ -8954,6 +8954,7 @@ GameObject:
   - component: {fileID: 875947814}
   - component: {fileID: 875947815}
   - component: {fileID: 875947816}
+  - component: {fileID: 875947817}
   m_Layer: 0
   m_Name: PacStudent
   m_TagString: Untagged
@@ -9038,11 +9039,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4a57a54125fe6427d9acbcfee51c82e8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -9137,6 +9138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animManager: {fileID: 875947815}
+  audioManager: {fileID: 875947817}
   tweener: {fileID: 1155012089}
   tilemap: {fileID: 256752605}
 --- !u!114 &875947815
@@ -9171,6 +9173,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &875947817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875947808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab7209f2d9bb4337a5035c0bfc07498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eating: {fileID: 8300000, guid: de4912ef211c84458a3a69aed4ea6359, type: 3}
+  normal: {fileID: 8300000, guid: 4a57a54125fe6427d9acbcfee51c82e8, type: 3}
 --- !u!1 &1074245655
 GameObject:
   m_ObjectHideFlags: 0

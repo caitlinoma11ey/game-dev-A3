@@ -5,7 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class PacStudentController : MonoBehaviour
 {
-    public PacStudentAnimManager animManager; 
+    public PacStudentAnimManager animManager;
+    public PacStudentAudioManager audioManager;
+
     public Tweener tweener;
     public Tilemap tilemap; 
 
@@ -60,8 +62,8 @@ public class PacStudentController : MonoBehaviour
             {
                 currentInput = lastInput;
                 ChangeDirection();
-                CheckForPellet(endPos);
 
+                CheckForPellet(endPos);
                 Lerp(startPos, endPos);
 
             }
@@ -85,18 +87,18 @@ public class PacStudentController : MonoBehaviour
         }
     }
 
-    void CheckForPellet(Vector2 newPos)
+    void CheckForPellet(Vector3 newPos)
     {
         Vector3Int gridPosition = tilemap.WorldToCell(newPos);
         TileBase tile = tilemap.GetTile(gridPosition);
 
         if (tile.name.Contains("Pellet"))
         {
-            
+            audioManager.PlayEatingClip();
         }
         else if (tile.name.Contains("Empty"))
         {
-
+            audioManager.PlayNormalClip();
         }
     }
 
@@ -138,7 +140,7 @@ public class PacStudentController : MonoBehaviour
         return Vector2.right;
     }
 
-    bool CanWalk(Vector2 newPos)
+    bool CanWalk(Vector3 newPos)
     {
         Vector3Int gridPosition = tilemap.WorldToCell(newPos);
         TileBase tile = tilemap.GetTile(gridPosition);

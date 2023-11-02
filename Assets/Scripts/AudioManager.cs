@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField]
     private AudioClip intro;
+
     [SerializeField]
     private AudioClip ghostNormal;
 
@@ -18,10 +19,10 @@ public class AudioManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = intro;
-        StartCoroutine(playAudio());
+        StartCoroutine(playStartAudio());
     }
 
-    IEnumerator playAudio()
+    IEnumerator playStartAudio()
     {
         audioSource.Play();
 
