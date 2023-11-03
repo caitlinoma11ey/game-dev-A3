@@ -8,13 +8,13 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField]
     private AudioClip intro;
-
     [SerializeField]
     private AudioClip ghostNormal;
+    [SerializeField]
+    private AudioClip ghostScared;
 
     private AudioSource audioSource;
 
-    // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -31,6 +31,25 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = ghostNormal;
         audioSource.loop = true;
         audioSource.Play();
+    }
+
+    public IEnumerator playScaredAudio()
+    {
+        audioSource.Stop();
+        audioSource.clip = ghostScared;
+        audioSource.loop = true;
+        audioSource.Play();
+
+        yield return new WaitForSecondsRealtime(10f);
+    }
+
+    public IEnumerator playNormalAudio()
+    {
+        audioSource.clip = ghostNormal;
+        audioSource.loop = true;
+        audioSource.Play();
+
+        yield return null;
     }
 }
 

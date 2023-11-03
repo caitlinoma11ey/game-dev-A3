@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 170717019}
   - component: {fileID: 170717018}
   - component: {fileID: 170717020}
+  - component: {fileID: 170717021}
   m_Layer: 0
   m_Name: PowerPellet (4)
-  m_TagString: Untagged
+  m_TagString: PowerPellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,6 +229,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &170717021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170717017}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5777778, y: 0.82222223, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &195892740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8111,9 +8133,10 @@ GameObject:
   - component: {fileID: 446965277}
   - component: {fileID: 446965276}
   - component: {fileID: 446965278}
+  - component: {fileID: 446965279}
   m_Layer: 0
   m_Name: PowerPellet (2)
-  m_TagString: Untagged
+  m_TagString: PowerPellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8205,6 +8228,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &446965279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446965275}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5777778, y: 0.82222223, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &503247392
 GameObject:
   m_ObjectHideFlags: 0
@@ -8438,7 +8482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: -12.200012, y: 3}
   m_SizeDelta: {x: 28, y: 58}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &533110231
@@ -13423,6 +13467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intro: {fileID: 8300000, guid: 5954c6a02a6814714bf892ddfe846bb5, type: 3}
   ghostNormal: {fileID: 8300000, guid: 812c9cc9b95254318b035d5e98725a06, type: 3}
+  ghostScared: {fileID: 8300000, guid: b7d2a68e080ca4940bfc101e2a39cab7, type: 3}
 --- !u!82 &779034645
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13545,9 +13590,10 @@ GameObject:
   - component: {fileID: 830351799}
   - component: {fileID: 830351798}
   - component: {fileID: 830351800}
+  - component: {fileID: 830351801}
   m_Layer: 0
   m_Name: PowerPellet (3)
-  m_TagString: Untagged
+  m_TagString: PowerPellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13639,6 +13685,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &830351801
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830351797}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5777778, y: 0.82222223, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &875947808
 GameObject:
   m_ObjectHideFlags: 0
@@ -13797,9 +13864,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab7209f2d9bb4337a5035c0bfc07498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eating: {fileID: 8300000, guid: de4912ef211c84458a3a69aed4ea6359, type: 3}
-  normal: {fileID: 8300000, guid: 4a57a54125fe6427d9acbcfee51c82e8, type: 3}
-  wall: {fileID: 8300000, guid: a366d8b3df1bd414ea580e4b333bece3, type: 3}
+  pacEating: {fileID: 8300000, guid: de4912ef211c84458a3a69aed4ea6359, type: 3}
+  pacNormal: {fileID: 8300000, guid: 4a57a54125fe6427d9acbcfee51c82e8, type: 3}
+  pacWall: {fileID: 0}
 --- !u!82 &875947818
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13908,11 +13975,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72bc6d4c22644872ad4af14bce36d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cherryController: {fileID: 0}
+  ghostManager: {fileID: 1155012092}
   tilemap: {fileID: 256752605}
   emptyTile: {fileID: 11400000, guid: 7b1d3cd39f46a4ed7a038a2e8cc39676, type: 2}
   pointsTxt: {fileID: 254821804}
-  points: 0
+  timerTxt: {fileID: 533110231}
 --- !u!65 &875947820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14474,6 +14541,7 @@ GameObject:
   - component: {fileID: 1155012090}
   - component: {fileID: 1155012089}
   - component: {fileID: 1155012091}
+  - component: {fileID: 1155012092}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -14522,6 +14590,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tweener: {fileID: 1155012089}
   cherryPrefab: {fileID: 7164865624141260046, guid: 487f1b87dd92a46719bbfe516dbf304a, type: 3}
+--- !u!114 &1155012092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155012088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88aae73e8ac034c6093cf2848ee683eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostAnimators:
+  - {fileID: 305715699}
+  - {fileID: 503247393}
+  - {fileID: 195892741}
+  - {fileID: 1658244942}
+  ghostAudio: {fileID: 779034644}
 --- !u!1 &1162439780
 GameObject:
   m_ObjectHideFlags: 0
@@ -20156,9 +20242,10 @@ GameObject:
   - component: {fileID: 2004909283}
   - component: {fileID: 2004909282}
   - component: {fileID: 2004909284}
+  - component: {fileID: 2004909285}
   m_Layer: 0
   m_Name: PowerPellet (1)
-  m_TagString: Untagged
+  m_TagString: PowerPellet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20250,6 +20337,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!65 &2004909285
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004909281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5777778, y: 0.82222223, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2076570841
 GameObject:
   m_ObjectHideFlags: 0

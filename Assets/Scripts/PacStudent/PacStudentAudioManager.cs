@@ -5,32 +5,31 @@ using UnityEngine;
 public class PacStudentAudioManager : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip eating;
+    private AudioClip pacEating;
 
     [SerializeField]
-    private AudioClip normal;
-
+    private AudioClip pacNormal;
 
     [SerializeField]
-    private AudioClip wall;
+    private AudioClip pacWall;
 
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.clip = eating;
+        audioSource.clip = pacEating;
     }
 
     public void PlayEatingClip()
     {
-        audioSource.clip = eating;
+        audioSource.clip = pacEating;
         audioSource.Play();
     }
 
     public void PlayNormalClip()
     {
-        audioSource.clip = normal;
+        audioSource.clip = pacNormal;
         audioSource.Play();
     }
 }

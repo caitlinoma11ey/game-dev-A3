@@ -6,18 +6,22 @@ using UnityEngine.UI;
 
 public class PelletManager : MonoBehaviour
 {
-    public CherryController cherryController;
+    public GhostManager ghostManager;
 
     public Tilemap tilemap;
     public TileBase emptyTile;
 
     public Text pointsTxt; 
-    public float points = 0;
+    private float points = 0;
+
+    public Text timerTxt;
+    private float timer = 10;
+    private bool ghostTimerActive = false;
 
     public void RemovePellet(Vector3Int pos)
     {
         tilemap.SetTile(pos, emptyTile);
-        Invoke("UpdateScore", 0.3f);
+        Invoke("UpdateScore", 0.1f);
     }
 
     void UpdateScore ()
@@ -33,8 +37,39 @@ public class PelletManager : MonoBehaviour
         pointsTxt.text = points.ToString();
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    gameObject.transform.position = -gameObject.transform.position;
-    //}
+    public void EatPowerPellet()
+    {
+        if (!ghostTimerActive)
+        {
+            StartCoroutine(StartGhostTimer());
+            ghostManager.TriggerScaredState();
+        }
+    }
+
+    public IEnumerator StartGhostTimer()
+    {
+        ghostTimerActive = true;
+
+        timer = 10;
+        timerTxt.enabled = true;
+
+        while (timer > 0)
+        {
+            timerTxt.text = timer.ToString();
+            yield return new WaitForSeconds(1);
+            timer -= 1;
+
+            if (timer == 3)
+                ghostManager.TriggerRecoveringState();
+        }
+
+        yield return null;
+
+        timer = 0;
+        timerTxt.text = "0";
+        timerTxt.enabled = false;
+        ghostManager.TriggerWalkingState();
+        ghostTimerActive = false;
+
+    }
 }

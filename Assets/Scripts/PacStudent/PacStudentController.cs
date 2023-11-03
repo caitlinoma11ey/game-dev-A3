@@ -8,6 +8,7 @@ public class PacStudentController : MonoBehaviour
     public PacStudentAnimManager animManager;
     public PacStudentAudioManager audioManager;
     public PelletManager pelletManager;
+
     public CherryController cherryController;
     public ParticleSystem dust;
     public ParticleSystem wallHitPS;
@@ -216,10 +217,21 @@ public class PacStudentController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cherry")
-        {
-            tweener.RemoveTween(other.transform);
-            cherryController.EatCherry(other.gameObject);
-            pelletManager.EatCherry();
-        }
+            HandleCherry(other);
+
+        if (other.tag == "PowerPellet")
+            HandlePowerPellet(other);
+    }
+
+    void HandleCherry(Collider other)
+    {
+        tweener.RemoveTween(other.transform);
+        cherryController.EatCherry(other.gameObject);
+        pelletManager.EatCherry();
+    }
+
+    void HandlePowerPellet(Collider other)
+    {
+        pelletManager.EatPowerPellet();
     }
 }

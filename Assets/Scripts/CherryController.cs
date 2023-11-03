@@ -12,7 +12,7 @@ public class CherryController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        InvokeRepeating("PlaceBonusCherry", 0f, 3f);
+        InvokeRepeating("PlaceBonusCherry", 0f, 10f);
     }
 
     void PlaceBonusCherry()
