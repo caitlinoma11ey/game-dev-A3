@@ -123,6 +123,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2959960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2959961}
+  - component: {fileID: 2959963}
+  - component: {fileID: 2959962}
+  m_Layer: 5
+  m_Name: CountDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2959961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1074245659}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2959962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 150
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 3
+--- !u!222 &2959963
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2959960}
+  m_CullTransparentMesh: 1
 --- !u!1 &170717017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7120,8 +7200,8 @@ Tilemap:
   - first: {x: -8, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 5
+      m_TileIndex: 19
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7691,7 +7771,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 9d372b6f7ee95442fbfdde9d76710f1a, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: ea0c722b4ff8645de88666bfba69341b, type: 2}
-  - m_RefCount: 218
+  - m_RefCount: 217
     m_Data: {fileID: 11400000, guid: b60fa780388604bc1ba9e8fe715a47ef, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b26864b0d8e9a42c3bd46b4e62e50363, type: 2}
@@ -7707,7 +7787,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 08b17f1f7016e40fbb828df3e9088519, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 62
+  - m_RefCount: 63
     m_Data: {fileID: 11400000, guid: 7b1d3cd39f46a4ed7a038a2e8cc39676, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -7718,9 +7798,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 62
+  - m_RefCount: 63
     m_Data: {fileID: 21300000, guid: 63e97bdbc42314836b955f6ded6accc0, type: 3}
-  - m_RefCount: 218
+  - m_RefCount: 217
     m_Data: {fileID: -1500136515, guid: 3185618a2799e489f804e090cd84f628, type: 3}
   - m_RefCount: 128
     m_Data: {fileID: 21300000, guid: f605086fc868f40b29904d24a9e49ae3, type: 3}
@@ -8633,7 +8713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675985573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.68, y: -0.08, z: 0}
+  m_LocalPosition: {x: 1.24, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8785,7 +8865,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -8902,7 +8982,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.41861382, g: 0.28875935, b: 0.9716981, a: 1}
+      maxColor: {r: 0.27173826, g: 0.14324492, b: 0.8207547, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8966,7 +9046,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9343,7 +9423,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 17
     angle: 7
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -10754,7 +10834,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 1
+    inWorldSpace: 0
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0
@@ -13815,11 +13895,14 @@ MonoBehaviour:
   animManager: {fileID: 875947815}
   audioManager: {fileID: 875947817}
   pelletManager: {fileID: 875947819}
+  ghostManager: {fileID: 1155012092}
   cherryController: {fileID: 1155012091}
   dust: {fileID: 1681902782}
   wallHitPS: {fileID: 675985576}
   tweener: {fileID: 1155012089}
   tilemap: {fileID: 256752605}
+  countdownTxt: {fileID: 2959962}
+  timerText: {fileID: 1520637223}
 --- !u!114 &875947815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13832,6 +13915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a30a10420cc4b6f841d254cdd131a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!95 &875947816
 Animator:
   serializedVersion: 5
@@ -13866,7 +13950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pacEating: {fileID: 8300000, guid: de4912ef211c84458a3a69aed4ea6359, type: 3}
   pacNormal: {fileID: 8300000, guid: 4a57a54125fe6427d9acbcfee51c82e8, type: 3}
-  pacWall: {fileID: 0}
+  pacWall: {fileID: 8300000, guid: a366d8b3df1bd414ea580e4b333bece3, type: 3}
 --- !u!82 &875947818
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14126,6 +14210,7 @@ RectTransform:
   - {fileID: 1520637222}
   - {fileID: 533110230}
   - {fileID: 1116472120}
+  - {fileID: 2959961}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

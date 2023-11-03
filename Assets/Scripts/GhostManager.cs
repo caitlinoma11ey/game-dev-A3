@@ -7,6 +7,14 @@ public class GhostManager : MonoBehaviour
     public List<Animator> ghostAnimators = new List<Animator>(4);
     public AudioManager ghostAudio;
 
+    private void Start()
+    {
+        for (int i = 0; i < ghostAnimators.Count; i++)
+        {
+            ghostAnimators[i].enabled = false;
+        }
+    }
+
     public void TriggerScaredState()
     {
         ghostAudio.StartCoroutine(ghostAudio.playScaredAudio());
@@ -34,4 +42,15 @@ public class GhostManager : MonoBehaviour
             ghostAnimators[i].SetTrigger("walkRight"); 
         }
     }
+
+    public void DisableState()
+    {
+        ghostAudio.StartCoroutine(ghostAudio.playNormalAudio());
+
+        for (int i = 0; i < ghostAnimators.Count; i++)
+        {
+            ghostAnimators[i].enabled = false; ;
+        }
+    }
+
 }

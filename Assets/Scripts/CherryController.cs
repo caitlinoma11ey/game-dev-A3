@@ -12,7 +12,6 @@ public class CherryController : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-        InvokeRepeating("PlaceBonusCherry", 0f, 10f);
     }
 
     void PlaceBonusCherry()
@@ -26,7 +25,6 @@ public class CherryController : MonoBehaviour
         if (!tweener.TweenExists(cherry.transform))
             StartCoroutine(DestroyCherry(cherry));
     }
-
 
     IEnumerator DestroyCherry(GameObject cherry)
     {

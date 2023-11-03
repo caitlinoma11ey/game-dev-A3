@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class PacStudentAnimManager : MonoBehaviour
 {
-    Animator animator;
-
+    public Animator animator;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-    }
-
-    void Update()
-    {
+        animator.enabled = false;
     }
 
     public void MoveUp ()

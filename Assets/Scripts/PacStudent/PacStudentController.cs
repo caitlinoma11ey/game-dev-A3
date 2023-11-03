@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+
 
 public class PacStudentController : MonoBehaviour
 {
     public PacStudentAnimManager animManager;
     public PacStudentAudioManager audioManager;
     public PelletManager pelletManager;
+    public GhostManager ghostManager;
 
     public CherryController cherryController;
     public ParticleSystem dust;
     public ParticleSystem wallHitPS;
-
 
     public Tweener tweener;
     public Tilemap tilemap;
@@ -25,41 +27,104 @@ public class PacStudentController : MonoBehaviour
     KeyCode lastInput;
     KeyCode currentInput;
 
+    public Text countdownTxt;
+    private bool countdownActive = false;
+
+    public Text timerText;
+    private float time;
+
     void Start()
     {
+        HideDust();
+        StartCoroutine(CountDown());
+        time = 0;
         wallHitPS.Stop();
+    }
+
+    IEnumerator CountDown()
+    {
+        countdownActive = true;
+        countdownTxt.text = "3";
+        yield return new WaitForSeconds(1);
+
+        countdownTxt.text = "2";
+        yield return new WaitForSeconds(1);
+
+        countdownTxt.text = "1";
+        yield return new WaitForSeconds(1);
+
+        countdownTxt.text = "GO!";
+        yield return new WaitForSeconds(1);
+
+        countdownTxt.enabled = false;
+        countdownActive = false;
+
+        EnableGameObjects();
+    }
+
+    void EnableGameObjects ()
+    {
+        animManager.animator.enabled = true;
+
+        for (int i = 0; i < ghostManager.ghostAnimators.Count; i++)
+        {
+            ghostManager.ghostAnimators[i].enabled = true;
+        }
+
+        ShowDust();
+        cherryController.InvokeRepeating("PlaceBonusCherry", 0f, 10f);
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (countdownActive == false)
         {
-            lastInput = KeyCode.W;
-            Move();
-        }
+            if (Input.GetKey(KeyCode.W))
+            {
+                lastInput = KeyCode.W;
+                Move();
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            lastInput = KeyCode.A;
-            Move();
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                lastInput = KeyCode.A;
+                Move();
+            }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            lastInput = KeyCode.S;
-            Move();
-        }
+            if (Input.GetKey(KeyCode.S))
+            {
+                lastInput = KeyCode.S;
+                Move();
+            }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            lastInput = KeyCode.D;
-            Move();
-        }
+            if (Input.GetKey(KeyCode.D))
+            {
+                lastInput = KeyCode.D;
+                Move();
+            }
 
-        Move();
+            Move();
+
+            CreateTimer();
+        }
     }
 
-    public void Move()
+    void CreateTimer()
+    {
+        time += Time.deltaTime;
+
+        int min = (int)(time/ 60);
+        int sec = (int)(time % 60);
+        int miliSec = Mathf.FloorToInt((time * 1000) % 1000);
+
+        //Round milisec to two digits
+        miliSec = Mathf.FloorToInt(miliSec / 10);
+
+
+        timerText.text = min.ToString("00") + ":" + sec.ToString("00") + ":" + miliSec.ToString("00");
+    }
+
+    void Move()
     {
         if (tweener != null && !tweener.isLerping(recentTween))
         {
@@ -75,6 +140,7 @@ public class PacStudentController : MonoBehaviour
                 currentInput = lastInput;
                 ChangeDirection();
 
+                StopWallParticles();
                 Lerp(startPos, endPos);
             }
             else
@@ -86,11 +152,11 @@ public class PacStudentController : MonoBehaviour
                 // Continue moving in current position if it is valid
                 if (CanWalk(endPos))
                 {
+                    StopWallParticles();
                     Lerp(startPos, endPos);
                 }
                 else
                 {
-                    wallHitPS.Play();
                     StopMovement(endPos);
                 }
             }
@@ -100,10 +166,22 @@ public class PacStudentController : MonoBehaviour
     public void StopMovement(Vector3 endPos)
     {
         HideDust();
+        CheckForWall(endPos);
         animManager.StopWalking();
-        CheckForPellet(endPos);
     }
 
+    public void CheckForWall(Vector3 newPos)
+    {
+        Vector3Int gridPosition = tilemap.WorldToCell(newPos);
+        TileBase tile = tilemap.GetTile(gridPosition);
+
+        if (tile.name.Contains("Wall"))
+        {
+            Debug.Log("HI");
+            //StartHitWallParticles();
+            //audioManager.PlayWallHitClip();
+        }
+}
     void CheckForPellet(Vector3 newPos)
     {
         Vector3Int gridPosition = tilemap.WorldToCell(newPos);
@@ -117,7 +195,7 @@ public class PacStudentController : MonoBehaviour
             audioManager.PlayEatingClip();
             pelletManager.RemovePellet(gridPosition);
         }
-        else
+        else if (!tile.name.Contains("Wall"))
         {
             audioManager.PlayNormalClip();
         }
@@ -125,7 +203,6 @@ public class PacStudentController : MonoBehaviour
 
     void Lerp(Vector2 startPos, Vector3 endPos)
     {
-        wallHitPS.Stop();
         ShowDust();
 
         if (!tweener.TweenExists(transform))
@@ -133,7 +210,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(transform, startPos, endPos, duration);
         }
 
-        CheckForPellet(startPos);
+        CheckForPellet(endPos);
 
         recentTween = transform; // Allows us to see if tween has completed 
     }
@@ -192,6 +269,16 @@ public class PacStudentController : MonoBehaviour
     void HideDust()
     {
         dust.Stop();
+    }
+
+    void StartHitWallParticles()
+    {
+        wallHitPS.Play();
+    }
+
+    void StopWallParticles()
+    {
+        wallHitPS.Stop();
     }
 
     void OnTriggerStay(Collider other)

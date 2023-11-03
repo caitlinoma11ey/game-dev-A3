@@ -32,4 +32,10 @@ public class PacStudentAudioManager : MonoBehaviour
         audioSource.clip = pacNormal;
         audioSource.Play();
     }
+
+    public void PlayWallHitClip()
+    {
+        audioSource.clip = pacWall;
+        audioSource.Play();
+    }
 }
