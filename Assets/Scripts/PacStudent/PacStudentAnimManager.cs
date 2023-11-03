@@ -40,4 +40,10 @@ public class PacStudentAnimManager : MonoBehaviour
     {
         animator.enabled = false;
     }
+
+    public void Dead()
+    {
+        animator.enabled = true;
+        animator.SetTrigger("Dead");
+    }
 }

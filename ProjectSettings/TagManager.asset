@@ -7,6 +7,7 @@ TagManager:
   - Teleporter
   - Cherry
   - PowerPellet
+  - Ghost
   layers:
   - Default
   - TransparentFX

@@ -33,6 +33,9 @@ public class PacStudentController : MonoBehaviour
     public Text timerText;
     private float time;
 
+    private int life = 3; 
+    public List<GameObject> lifeHearts = new List<GameObject>(3);
+
     public Text gameOver; 
 
     void Start()
@@ -315,15 +318,6 @@ public class PacStudentController : MonoBehaviour
         }
     }
 
-    private IEnumerator Teleport()
-    {
-        // -0.3f to ensure pacstudent remains in middle of the map.
-        Vector3 newPos = new Vector3(-transform.position.x-0.3f, transform.position.y, 0);
-        transform.position = newPos;
-
-        yield return null;
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Cherry")
@@ -331,6 +325,18 @@ public class PacStudentController : MonoBehaviour
 
         if (other.tag == "PowerPellet")
             HandlePowerPellet(other);
+
+        if (other.tag == "Ghost")
+            PacStudentDies(other);
+    }
+
+    private IEnumerator Teleport()
+    {
+        // -0.3f to ensure pacstudent remains in middle of the map.
+        Vector3 newPos = new Vector3(-transform.position.x-0.3f, transform.position.y, 0);
+        transform.position = newPos;
+
+        yield return null;
     }
 
     void HandleCherry(Collider other)
@@ -350,6 +356,20 @@ public class PacStudentController : MonoBehaviour
         Destroy(other.gameObject);
         pelletManager.EatPowerPellet();
         pelletManager.PelletsGone();
+    }
+
+    void PacStudentDies(Collider other)
+    {
+        animManager.Dead();
+        if (life > 0 )
+        {
+            lifeHearts[life-1].SetActive(false);
+            life--;
+        }
+        else
+        {
+            GameOver();
+        }
     }
 
     void GameOver()
