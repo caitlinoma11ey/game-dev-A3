@@ -33,11 +33,19 @@ public class PacStudentController : MonoBehaviour
     public Text timerText;
     private float time;
 
+    public Text gameOver; 
+
     void Start()
     {
         HideDust();
+        time = PlayerPrefs.GetFloat("elapsedTime", 0f);
+        CreateTimer();
+
+        int points = pelletManager.savedPoints = PlayerPrefs.GetInt("points", 0);
+        pelletManager.pointsTxt.text = points.ToString();
+
         StartCoroutine(CountDown());
-        time = 0;
+
         wallHitPS.Stop();
     }
 
@@ -79,33 +87,41 @@ public class PacStudentController : MonoBehaviour
     {
         if (countdownActive == false)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (pelletManager.PelletsGone())
             {
-                lastInput = KeyCode.W;
-                Move();
+                GameOver();
             }
-
-            if (Input.GetKey(KeyCode.A))
+            else
             {
-                lastInput = KeyCode.A;
+                if (Input.GetKey(KeyCode.W))
+                {
+                    lastInput = KeyCode.W;
+                    Move();
+                }
+
+                if (Input.GetKey(KeyCode.A))
+                {
+                    lastInput = KeyCode.A;
+                    Move();
+                }
+
+                if (Input.GetKey(KeyCode.S))
+                {
+                    lastInput = KeyCode.S;
+                    Move();
+                }
+
+                if (Input.GetKey(KeyCode.D))
+                {
+                    lastInput = KeyCode.D;
+                    Move();
+                }
+
                 Move();
+
+                CreateTimer();
+                SaveTimer();
             }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                lastInput = KeyCode.S;
-                Move();
-            }
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                lastInput = KeyCode.D;
-                Move();
-            }
-
-            Move();
-
-            CreateTimer();
         }
     }
 
@@ -120,8 +136,12 @@ public class PacStudentController : MonoBehaviour
         //Round milisec to two digits
         miliSec = Mathf.FloorToInt(miliSec / 10);
 
-
         timerText.text = min.ToString("00") + ":" + sec.ToString("00") + ":" + miliSec.ToString("00");
+    }
+
+    void SaveTimer()
+    {
+        PlayerPrefs.SetFloat("elapsedTime", time);
     }
 
     void Move()
@@ -175,11 +195,13 @@ public class PacStudentController : MonoBehaviour
         Vector3Int gridPosition = tilemap.WorldToCell(newPos);
         TileBase tile = tilemap.GetTile(gridPosition);
 
+        if (tile == null)
+            return;
+
         if (tile.name.Contains("Wall"))
         {
-            Debug.Log("HI");
-            //StartHitWallParticles();
-            //audioManager.PlayWallHitClip();
+            StartHitWallParticles();
+            audioManager.PlayWallHitClip();
         }
 }
     void CheckForPellet(Vector3 newPos)
@@ -194,6 +216,10 @@ public class PacStudentController : MonoBehaviour
         {
             audioManager.PlayEatingClip();
             pelletManager.RemovePellet(gridPosition);
+            if (pelletManager.PelletsGone())
+            {
+                GameOver();
+            }
         }
         else if (!tile.name.Contains("Wall"))
         {
@@ -210,7 +236,7 @@ public class PacStudentController : MonoBehaviour
             tweener.AddTween(transform, startPos, endPos, duration);
         }
 
-        CheckForPellet(endPos);
+        CheckForPellet(startPos);
 
         recentTween = transform; // Allows us to see if tween has completed 
     }
@@ -285,15 +311,12 @@ public class PacStudentController : MonoBehaviour
     {
         if (other.tag == "Teleporter")
         {
-            Debug.Log("Test");
-
             StartCoroutine(Teleport());
         }
     }
 
     private IEnumerator Teleport()
     {
-
         // -0.3f to ensure pacstudent remains in middle of the map.
         Vector3 newPos = new Vector3(-transform.position.x-0.3f, transform.position.y, 0);
         transform.position = newPos;
@@ -315,10 +338,28 @@ public class PacStudentController : MonoBehaviour
         tweener.RemoveTween(other.transform);
         cherryController.EatCherry(other.gameObject);
         pelletManager.EatCherry();
+
+        if (pelletManager.PelletsGone())
+        {
+            GameOver();
+        }
     }
 
     void HandlePowerPellet(Collider other)
     {
+        Destroy(other.gameObject);
         pelletManager.EatPowerPellet();
+        pelletManager.PelletsGone();
+    }
+
+    void GameOver()
+    {
+        gameOver.enabled = true;
+        animManager.animator.enabled = false;
+        HideDust();
+        cherryController.gameIsPlaying = false;
+
+        ghostManager.DisableState();
+        pelletManager.CheckHighScore(time);
     }
 }

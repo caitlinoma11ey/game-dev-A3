@@ -9,6 +9,8 @@ public class CherryController : MonoBehaviour
 
     private Camera cam;
 
+    public bool gameIsPlaying = true;
+
     void Start()
     {
         cam = Camera.main;
@@ -16,14 +18,17 @@ public class CherryController : MonoBehaviour
 
     void PlaceBonusCherry()
     {
-        Vector3 position = GetRandomPosition();
-        GameObject cherry = Instantiate(cherryPrefab, position, Quaternion.identity);
+        if (gameIsPlaying)
+        {
+            Vector3 position = GetRandomPosition();
+            GameObject cherry = Instantiate(cherryPrefab, position, Quaternion.identity);
 
-        if (!tweener.TweenExists(cherry.transform))
-            tweener.AddTween(cherry.transform, position, -position, 20f);
+            if (!tweener.TweenExists(cherry.transform))
+                tweener.AddTween(cherry.transform, position, -position, 20f);
 
-        if (!tweener.TweenExists(cherry.transform))
-            StartCoroutine(DestroyCherry(cherry));
+            if (!tweener.TweenExists(cherry.transform))
+                StartCoroutine(DestroyCherry(cherry));
+        }
     }
 
     IEnumerator DestroyCherry(GameObject cherry)

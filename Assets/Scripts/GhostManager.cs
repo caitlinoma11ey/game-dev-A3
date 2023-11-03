@@ -49,7 +49,7 @@ public class GhostManager : MonoBehaviour
 
         for (int i = 0; i < ghostAnimators.Count; i++)
         {
-            ghostAnimators[i].enabled = false; ;
+            ghostAnimators[i].enabled = false;
         }
     }
 
